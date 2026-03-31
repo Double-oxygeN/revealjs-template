@@ -15,6 +15,7 @@
   "dependencies": {
     "katex": "^0.16.44",
     "mermaid": "^11.13.0",
+    "open-color": "^1.9.1",
     "reveal.js": "^6.0.0"
   },
   "devDependencies": {

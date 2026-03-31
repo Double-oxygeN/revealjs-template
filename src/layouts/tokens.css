@@ -1,0 +1,17 @@
+@import 'open-color/open-color.css';
+
+.reveal {
+    /* Base tokens */
+    --slide-bg:        var(--oc-gray-0);
+    --slide-fg:        var(--oc-gray-9);
+    --slide-primary:   var(--oc-blue-7);
+    --slide-secondary: var(--oc-pink-7);
+
+    /* Derived tokens: DO NOT EDIT */
+    --slide-fg-body:   color-mix(in oklch, var(--slide-fg) 80%, var(--slide-bg));
+    --slide-fg-muted:  color-mix(in oklch, var(--slide-fg) 43%, var(--slide-bg));
+    --slide-fg-dimmed: color-mix(in oklch, var(--slide-fg) 25%, var(--slide-bg));
+
+    --slide-dark:        color-mix(in oklch, var(--slide-fg) 57%, black);
+    --slide-dark-accent: color-mix(in oklch, var(--slide-primary) 60%, black);
+}

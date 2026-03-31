@@ -1,0 +1,5 @@
+/* Global styles for the layout components */
+@import './tokens.css';
+
+/* List of all the layout components */
+/* @import './foobar.css'; (delete this line when adding the first layout component) */
