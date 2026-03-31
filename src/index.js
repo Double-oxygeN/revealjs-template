@@ -20,5 +20,7 @@ const deck = new Reveal({
     },
     plugins: [RevealHighlight, RevealMath.KaTeX, RevealNotes],
 });
-deck.initialize();
+deck.initialize().then(() => {
+    if (window.__screenshot__) window.__reveal__ = deck;
+});
 mermaid.initialize({ startOnLoad: true });
