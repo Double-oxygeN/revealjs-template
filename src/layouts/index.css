@@ -3,4 +3,5 @@
 
 /* List of all the layout components */
 @import './title.css';
+@import './section.css';
 @import './content.css';

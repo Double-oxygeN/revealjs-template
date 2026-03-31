@@ -12,6 +12,7 @@
     --slide-fg-muted:  color-mix(in oklch, var(--slide-fg) 43%, var(--slide-bg));
     --slide-fg-dimmed: color-mix(in oklch, var(--slide-fg) 25%, var(--slide-bg));
 
-    --slide-dark:        color-mix(in oklch, var(--slide-fg) 57%, black);
-    --slide-dark-accent: color-mix(in oklch, var(--slide-primary) 60%, black);
+    --slide-dark:          color-mix(in oklch, var(--slide-fg) 57%, black);
+    --slide-dark-accent:   color-mix(in oklch, var(--slide-primary) 60%, black);
+    --slide-primary-light: color-mix(in oklch, var(--slide-primary) 85%, white);
 }
