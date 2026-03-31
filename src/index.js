@@ -10,8 +10,8 @@ import 'reveal.js/plugin/highlight/monokai.css';
 import './style.css';
 
 const deck = new Reveal({
-    width: 1280,
-    height: 720,
+    width: 1440,
+    height: 810,
     margin: 0,
     progress: false,
     transition: 'none',

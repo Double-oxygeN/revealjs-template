@@ -63,7 +63,7 @@ async function takeScreenshots() {
   try {
     browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
     const page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 720 });
+    await page.setViewport({ width: 1440, height: 810 });
 
     // Set flag before page load and expose Reveal instance
     await page.evaluateOnNewDocument(() => { window.__screenshot__ = true; });
