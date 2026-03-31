@@ -1,0 +1,58 @@
+.reveal .slides section.layout-content {
+    background: var(--slide-bg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+}
+
+/* Title bar at the top with a primary-colored left accent */
+.reveal .slides section.layout-content .layout-content__title {
+    flex: 0 0 auto;
+    padding: 1rem 4rem 0.8rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 1.5rem;
+    border-bottom: 2px solid var(--slide-primary);
+}
+
+.reveal .slides section.layout-content .layout-content__title h2 {
+    color: var(--slide-fg);
+    text-align: left;
+    font-size: 1.6em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Body area fills the remaining space */
+.reveal .slides section.layout-content .layout-content__body {
+    flex: 1 1 auto;
+    padding: 1.5rem 4rem 2rem;
+    margin: 0 3rem;
+    overflow: hidden;
+    text-align: left;
+}
+
+.reveal .slides section.layout-content .layout-content__body p {
+    color: var(--slide-fg-body);
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0 0 0.6em;
+    text-align: left;
+}
+
+.reveal .slides section.layout-content .layout-content__body ul,
+.reveal .slides section.layout-content .layout-content__body ol {
+    color: var(--slide-fg-body);
+    font-size: 1em;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 1.4em;
+    text-align: left;
+}
+
+.reveal .slides section.layout-content .layout-content__body li {
+    margin-bottom: 0.3em;
+}
