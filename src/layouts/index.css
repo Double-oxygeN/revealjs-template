@@ -2,4 +2,4 @@
 @import './tokens.css';
 
 /* List of all the layout components */
-/* @import './foobar.css'; (delete this line when adding the first layout component) */
+@import './title.css';
