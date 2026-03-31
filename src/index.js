@@ -20,7 +20,16 @@ const deck = new Reveal({
     },
     plugins: [RevealHighlight, RevealMath.KaTeX, RevealNotes],
 });
+mermaid.initialize({ startOnLoad: false, theme: 'default' });
+
 deck.initialize().then(() => {
+    // Run Mermaid on the initial slide
+    mermaid.run({ querySelector: '.present pre.mermaid' });
+
+    // Re-run Mermaid whenever the slide changes so newly-visible diagrams render
+    deck.on('slidechanged', () => {
+        mermaid.run({ querySelector: '.present pre.mermaid' });
+    });
+
     if (window.__screenshot__) window.__reveal__ = deck;
 });
-mermaid.initialize({ startOnLoad: true });
