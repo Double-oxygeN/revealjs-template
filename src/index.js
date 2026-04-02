@@ -13,6 +13,8 @@ const deck = new Reveal({
     width: 1440,
     height: 810,
     margin: 0,
+    center: false,
+    pdfSeparateFragments: false,
     progress: false,
     transition: 'none',
     katex: {
