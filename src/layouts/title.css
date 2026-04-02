@@ -6,52 +6,52 @@
     );
     height: 100%;
     overflow: hidden;
-}
 
-/* Title sits above the center line; pushed toward it with flex-end */
-.reveal .slides section.layout-title .layout-title__title {
-    position: absolute;
-    top: 4rem;
-    bottom: 50%;
-    left: 4rem;
-    right: 4rem;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    overflow: hidden;
-}
+    /* Title sits above the center line; pushed toward it with flex-end */
+    .layout-title__title {
+        position: absolute;
+        top: 4rem;
+        bottom: 50%;
+        left: 4rem;
+        right: 4rem;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
 
-.reveal .slides section.layout-title .layout-title__title h1 {
-    color: white;
-    text-align: left;
-    font-size: 2.5em;
-    margin: 0;
-    line-height: 1.2;
-}
+        h1 {
+            color: white;
+            text-align: left;
+            font-size: 2.5em;
+            margin: 0;
+            line-height: 1.2;
+        }
+    }
 
-/* Subtitle sits below the center line; separator drawn at top via ::before */
-.reveal .slides section.layout-title .layout-title__subtitle {
-    position: absolute;
-    top: 50%;
-    bottom: 4rem;
-    left: 4rem;
-    right: 4rem;
-    overflow: hidden;
-}
+    /* Subtitle sits below the center line; separator drawn at top via ::before */
+    .layout-title__subtitle {
+        position: absolute;
+        top: 50%;
+        bottom: 4rem;
+        left: 4rem;
+        right: 4rem;
+        overflow: hidden;
 
-.reveal .slides section.layout-title .layout-title__subtitle::before {
-    content: '';
-    display: block;
-    width: 70%;
-    border-top: 2px solid color-mix(in oklch, white 40%, transparent);
-    margin-bottom: 2rem;
-}
+        &::before {
+            content: '';
+            display: block;
+            width: 70%;
+            border-top: 2px solid color-mix(in oklch, white 40%, transparent);
+            margin-bottom: 2rem;
+        }
 
-.reveal .slides section.layout-title .layout-title__subtitle p {
-    color: color-mix(in oklch, white 72%, transparent);
-    text-align: left;
-    font-size: 1.3em;
-    margin: 0;
-    line-height: 1.4;
+        p {
+            color: color-mix(in oklch, white 72%, transparent);
+            text-align: left;
+            font-size: 1.3em;
+            margin: 0;
+            line-height: 1.4;
+        }
+    }
 }
