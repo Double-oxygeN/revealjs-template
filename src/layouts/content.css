@@ -41,6 +41,11 @@
             text-align: left;
         }
 
+        figcaption {
+            color: var(--slide-fg-muted);
+            font-size: 0.7em;
+        }
+
         ul,
         ol {
             color: var(--slide-fg-body);
