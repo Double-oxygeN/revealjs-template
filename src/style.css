@@ -9,6 +9,13 @@
     text-transform: none !important;
 }
 
-pre.mermaid {
+.reveal figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.reveal pre.mermaid {
     box-shadow: none;
 }
