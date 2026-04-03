@@ -58,7 +58,7 @@
             content: '';
             display: block;
             width: 70%;
-            border-top: 2px solid color-mix(in oklch, white 40%, transparent);
+            border-top: 2px solid var(--slide-secondary);
             margin-bottom: 2rem;
         }
 
