@@ -17,17 +17,16 @@
 .reveal .card-group {
     --card-radius: 0.75rem;
     --card-bg: var(--slide-primary-tint);
+    --card-min-width: 10rem;
 
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
     gap: 1.5rem;
 
     &.card-group--primary   { --card-bg: var(--slide-primary-tint); }
     &.card-group--secondary { --card-bg: var(--slide-secondary-tint); }
 
     .card {
-        flex: 1 1 0;
         background: var(--card-bg);
         border-radius: var(--card-radius);
         display: flex;
