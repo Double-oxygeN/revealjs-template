@@ -31,4 +31,7 @@
     --slide-dark:          color-mix(in oklch, var(--slide-fg) 57%, black);
     --slide-dark-accent:   color-mix(in oklch, var(--slide-primary) 60%, black);
     --slide-primary-light: color-mix(in oklch, var(--slide-primary) 85%, white);
+
+    --slide-primary-tint:   color-mix(in oklch, var(--slide-primary)   15%, var(--slide-bg));
+    --slide-secondary-tint: color-mix(in oklch, var(--slide-secondary) 15%, var(--slide-bg));
 }

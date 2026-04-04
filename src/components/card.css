@@ -1,5 +1,5 @@
 /**
- * Copyright 2026 Yuya Shiratori (template author)
+ * Copyright 2026 Yuya Shiratori
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,27 +14,27 @@
  * limitations under the License.
  */
 
-@import "./layouts/index.css";
-@import "./components/index.css";
+.reveal .card-group {
+    --card-radius: 0.75rem;
+    --card-bg: var(--slide-primary-tint);
 
-.reveal {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        text-transform: none !important;
-    }
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.5rem;
 
-    figure {
+    &.card-group--primary   { --card-bg: var(--slide-primary-tint); }
+    &.card-group--secondary { --card-bg: var(--slide-secondary-tint); }
+
+    .card {
+        flex: 1 1 0;
+        background: var(--card-bg);
+        border-radius: var(--card-radius);
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
-    }
-
-    pre.mermaid {
-        box-shadow: none;
+        padding: 1.5rem;
     }
 }
