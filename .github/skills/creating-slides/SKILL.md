@@ -35,7 +35,18 @@ The color palette is defined in `src/layouts/tokens.css` via CSS custom properti
 
 ## After Making Changes
 
-Run `npm run screenshot` to capture all slide states, then visually review each screenshot. Check for:
+Capture screenshots of the slides you changed, then visually review each screenshot:
+
+```sh
+npm run screenshot -- 3 5-7   # only horizontal slides 3, 5, 6, 7 (all fragment states)
+npm run screenshot            # all slides
+```
+
+- Indices are 0-based horizontal slide positions, matching `h` in the output filename `slide-h-v-f.png`.
+- Inserting or deleting a slide shifts the indices of all following slides.
+- Capture all slides (no arguments) after changing shared CSS/JS, and for the final check.
+
+Check for:
 
 - **Text overflow** — if text is clipped or runs outside a container, rephrase to be shorter or reduce font size.
 - **Code overflow** — if a code block extends beyond the slide edge, break long lines or trim the example.
@@ -45,4 +56,4 @@ Run `npm run screenshot` to capture all slide states, then visually review each 
 - **Contrast and readability** — ensure text is legible against the slide background, especially on dark layouts.
 - **Alignment** — verify titles, body text, and diagrams are visually balanced and not awkwardly positioned.
 
-If anything looks off, fix the issue in `src/slides.html` and re-run `npm run screenshot` repeatedly until all issues are resolved.
+If anything looks off, fix the issue in `src/slides.html` and re-run `npm run screenshot -- <indices>` repeatedly until all issues are resolved.
