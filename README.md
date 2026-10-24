@@ -1,7 +1,7 @@
 # Reveal.js Template
 
 This is a template repository for Reveal.js + Vite presentations.
-It also includes useful Agent Skills for GitHub Copilot.
+It also includes useful Agent Skills for GitHub Copilot/Claude Code.
 
 ## How to Use Template
 
