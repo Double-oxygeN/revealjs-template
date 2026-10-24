@@ -120,7 +120,20 @@ graph LR
 </pre>
 ```
 
-Do NOT add a `<code>` wrapper for Mermaid. The `<pre class="mermaid">` element is rendered directly by the Mermaid plugin.
+Do NOT add a `<code>` wrapper for Mermaid. The `<pre class="mermaid">` element is rendered directly by [Pele](https://pele.run), a Mermaid-compatible renderer.
+
+Diagrams are styled automatically with the slide theme colors and font. Do NOT add `%%{init: ...}%%` theme settings or `style`/`classDef` color overrides unless a specific highlight is needed.
+
+Diagrams are scaled up by `--mermaid-scale` (default `1.5`) and shrunk to fit when taller than the slide body. Adjust the scale per diagram when it looks too large or too small next to the surrounding content:
+
+```html
+<pre class="mermaid" style="--mermaid-scale: 1.2">
+graph LR
+    A --> B --> C
+</pre>
+```
+
+Prefer `LR` over `TB` for flowcharts with many steps, since slides are wider than they are tall.
 
 ## KaTeX math
 

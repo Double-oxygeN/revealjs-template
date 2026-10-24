@@ -51,7 +51,7 @@ Check for:
 - **Text overflow** — if text is clipped or runs outside a container, rephrase to be shorter or reduce font size.
 - **Code overflow** — if a code block extends beyond the slide edge, break long lines or trim the example.
 - **Syntax error** — if Mermaid or KaTeX fails to render, check the syntax and ensure the content is valid.
-- **Diagram sizing** — if a Mermaid or SVG diagram is cut off, simplify it or adjust the `viewBox`/layout.
+- **Diagram sizing** — if a Mermaid diagram is too small to read, simplify it, change its direction, or adjust `--mermaid-scale`; if an SVG diagram is cut off, adjust the `viewBox`/layout.
 - **Fragment ordering** — step through each fragment state and confirm elements appear in the intended sequence.
 - **Contrast and readability** — ensure text is legible against the slide background, especially on dark layouts.
 - **Alignment** — verify titles, body text, and diagrams are visually balanced and not awkwardly positioned.

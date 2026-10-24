@@ -16,7 +16,7 @@ import Reveal from 'reveal.js';
 import RevealHighlight from 'reveal.js/plugin/highlight';
 import RevealMath from 'reveal.js/plugin/math';
 import RevealNotes from 'reveal.js/plugin/notes';
-import mermaid from 'mermaid';
+import { mountAsync } from 'pele/lazy';
 import { initCycleRings } from './components/cycle-ring.js';
 import 'reveal.js/reset.css';
 import 'reveal.js/reveal.css';
@@ -37,18 +37,27 @@ const deck = new Reveal({
     },
     plugins: [RevealHighlight, RevealMath.KaTeX, RevealNotes],
 });
-mermaid.initialize({ startOnLoad: false, theme: 'default' });
+
+// Read Mermaid source the same way Mermaid.js does: decode HTML entities
+// (e.g. `--&gt;`) while keeping inline tags such as `<br>` as literal text.
+function readMermaidSource(el) {
+    const decoder = document.createElement('textarea');
+    decoder.innerHTML = el.innerHTML;
+    return decoder.value;
+}
+
+// Render all Mermaid diagrams with Pele, loading only the diagram types in use.
+// A mounted diagram waits while its slide is hidden (zero width) and renders
+// once it becomes visible, so mounting every diagram up front is enough.
+function initDiagrams() {
+    for (const el of document.querySelectorAll('.reveal pre.mermaid')) {
+        mountAsync(el, readMermaidSource(el), { zoom: false });
+    }
+}
 
 deck.initialize().then(() => {
     initCycleRings();
-
-    // Run Mermaid on the initial slide
-    mermaid.run({ querySelector: '.present pre.mermaid' });
-
-    // Re-run Mermaid whenever the slide changes so newly-visible diagrams render
-    deck.on('slidechanged', () => {
-        mermaid.run({ querySelector: '.present pre.mermaid' });
-    });
+    initDiagrams();
 
     if (window.__screenshot__) window.__reveal__ = deck;
 });

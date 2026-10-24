@@ -89,17 +89,21 @@ function waitForSlideRendered(page) {
 
     const slide = window.__reveal__.getCurrentSlide();
 
-    // Mermaid renders asynchronously on `slidechanged`. While rendering, it
-    // draws into a temporary `<div><svg>` inside the element, then replaces the
-    // element's content with the final `<svg>`, so wait for a direct child svg.
+    // Pele renders a diagram once its slide becomes visible (on the next
+    // ResizeObserver callback), replacing the element's content with an `<svg>`,
+    // or with a `.pele-error` message when the source cannot be parsed.
     const diagrams = [...slide.querySelectorAll('pre.mermaid')];
     const deadline = performance.now() + mermaidTimeout;
-    while (diagrams.some((el) => !el.querySelector(':scope > svg'))) {
+    while (diagrams.some((el) => !el.querySelector(':scope > svg, :scope > .pele-error'))) {
       if (performance.now() > deadline) {
-        warnings.push('Mermaid diagram did not render in time (syntax error?)');
+        warnings.push('Mermaid diagram did not render in time');
         break;
       }
       await new Promise((r) => setTimeout(r, 20));
+    }
+    for (const el of diagrams) {
+      const error = el.querySelector(':scope > .pele-error');
+      if (error) warnings.push(`Mermaid diagram failed to render: ${error.title || error.textContent}`);
     }
 
     await Promise.all(

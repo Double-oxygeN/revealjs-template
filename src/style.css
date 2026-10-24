@@ -34,7 +34,47 @@
         text-align: center;
     }
 
+    /* Mermaid diagrams rendered by Pele, themed with slide tokens */
     pre.mermaid {
+        --pele-bg:          var(--slide-bg);
+        --pele-fg:          var(--slide-fg);
+        --pele-muted:       var(--slide-fg-muted);
+        --pele-line:        var(--slide-fg-muted);
+        --pele-surface:     var(--slide-primary-tint);
+        --pele-surface-alt: color-mix(in oklch, var(--slide-fg) 6%, var(--slide-bg));
+        --pele-border:      var(--slide-primary);
+        --pele-accent:      var(--slide-primary);
+        --pele-critical:    var(--slide-secondary);
+        --pele-error:       var(--slide-secondary);
+        --pele-font:        var(--r-main-font);
+        --pele-radius:      0.5rem;
+
+        --pele-series-1: var(--slide-primary);
+        --pele-series-2: var(--slide-secondary);
+        --pele-series-3: var(--oc-teal-6);
+        --pele-series-4: var(--oc-yellow-6);
+        --pele-series-5: var(--oc-violet-6);
+        --pele-series-6: var(--oc-orange-6);
+        --pele-series-7: var(--oc-cyan-6);
+        --pele-series-8: var(--oc-gray-6);
+
+        /* Pele lays out at 16px; scale the whole diagram up to slide size.
+           Override per diagram with `style="--mermaid-scale: 1.2"`. */
+        --mermaid-scale: 1.5;
+        zoom: var(--mermaid-scale);
+
+        width: auto;
+        margin: 0.5em auto;
+        text-align: center;
         box-shadow: none;
+
+        /* Shrink tall diagrams to fit the slide body instead of clipping them */
+        > svg {
+            max-height: calc(600px / var(--mermaid-scale));
+        }
+
+        .pele-error {
+            text-align: left;
+        }
     }
 }
